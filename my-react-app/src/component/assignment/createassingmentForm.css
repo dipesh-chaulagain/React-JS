@@ -1,0 +1,247 @@
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #17211b;
+  background: #f4f0e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f4f0e8;
+}
+
+.assignment-page {
+  width: min(100% - 32px, 920px);
+  margin: 0 auto;
+  padding: 64px 0 80px;
+}
+
+.assignment-intro {
+  max-width: 620px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #b34d35;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.assignment-intro h1 {
+  margin: 0;
+  color: #17211b;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.assignment-intro > p:last-child {
+  max-width: 500px;
+  margin: 20px 0 0;
+  color: #5b675e;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.assignment-form {
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #d8d1c2;
+  border-radius: 8px;
+  background: #fffdf8;
+  box-shadow: 12px 12px 0 #ded6c6;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  color: #344239;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid #b9c0b6;
+  border-radius: 4px;
+  padding: 13px 14px;
+  color: #17211b;
+  background: #f8f7f1;
+  font: inherit;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #b34d35;
+  box-shadow: 0 0 0 3px rgba(179, 77, 53, 0.16);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #8b958c;
+}
+
+fieldset.field {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+fieldset legend {
+  margin-bottom: 9px;
+  padding: 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-option,
+.checkbox-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #344239;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.radio-option {
+  border: 1px solid #b9c0b6;
+  border-radius: 4px;
+  padding: 11px 13px;
+  background: #f8f7f1;
+}
+
+.radio-option:has(input:checked) {
+  border-color: #b34d35;
+  color: #8b3827;
+  background: #fff0eb;
+}
+
+.radio-option input,
+.checkbox-option input {
+  accent-color: #b34d35;
+}
+
+.optional {
+  color: #8b958c;
+  font-weight: 400;
+}
+
+.checkbox-option {
+  margin-top: 28px;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e4ded2;
+}
+
+.form-actions button {
+  border: 0;
+  border-radius: 4px;
+  padding: 14px 20px;
+  color: #fffdf8;
+  background: #b34d35;
+  cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.form-actions button:hover:not(:disabled) {
+  background: #8b3827;
+  transform: translateY(-1px);
+}
+
+.form-actions button:focus-visible {
+  outline: 3px solid rgba(179, 77, 53, 0.35);
+  outline-offset: 3px;
+}
+
+.form-actions button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.form-status {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.85rem;
+}
+
+.form-status.success {
+  color: #26704a;
+}
+
+.form-status.error {
+  color: #a3342c;
+}
+
+.form-status.loading {
+  color: #5b675e;
+}
+
+@media (max-width: 640px) {
+  .assignment-page {
+    width: min(100% - 24px, 920px);
+    padding: 40px 0 56px;
+  }
+
+  .assignment-form {
+    box-shadow: 6px 6px 0 #ded6c6;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-wide {
+    grid-column: auto;
+  }
+
+  .radio-group {
+    flex-direction: column;
+  }
+}
